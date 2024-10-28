@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --input-base-height: 60px;
+    --main-width: 600px;
+
+    --main-bg: #222435;
+    --delete-button-main-color: #ff004c;
+    --del-text-color: #4d606e;;
+    --input-bg: #2d3046;
+    --item-bg: #363b65;
+    --item-bg-hover: #151627;
+    --add-button: #363b65;
+    --add-button-hover: #363f88;
+    --item-complete-color: #4d506e;
+}
+
+* {
+    :focus {
+        outline: none;
+    }
+}
+
+body {
+    background: var(--main-bg);
+    font-family: 'Roboto', sans-serif;
+}
+
+.title {
+    font-weight: 900;
+    color: #7d83b9;
+    text-align: center;
+    margin: 15px auto;
+}
+
+.form {
+    display: flex;
+    width: var(--main-width);
+    height: var(--input-base-height);
+    margin: 40px auto 60px auto;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#input {
+    display: flex;
+    width: 100%;
+    height: var(--input-base-height);
+    background: var(--input-bg);
+    border: none;
+    padding-left: 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    color: white;
+}
+
+.add {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--add-button);
+    border: none;
+    cursor: pointer;
+    padding: 10px 25px;
+    height: var(--input-base-height);
+    border-radius: 0 10px 10px 0;
+    color: white;
+    font-weight: bold;
+}
+
+.add:hover {
+    background: var(--add-button-hover);
+}
+
+.todo-list {
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    width: var(--main-width);
+    margin: auto;
+}
+
+.central-icon {
+    max-width: 80%;
+    margin: auto;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--item-bg);
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.item:hover {
+    background: var(--item-bg-hover);
+}
+
+.item span {
+    width: 100%;
+    color: white;
+    margin-right: 10px;
+    padding: 10px 15px;
+}
+
+.item.complete {
+    background: #1e1f2e;
+    border: none;
+}
+
+.item.complete span {
+    color: var(--item-complete-color);
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.del {
+    color: var(--del-text-color);
+    border: none;
+    background: none;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.del:hover {
+    background: var(--delete-button-main-color);
+    color: white;
+}
+
+.del-all {
+    display: none;
+    border: 1px solid var(--delete-button-main-color);
+    background: none;
+    padding: 15px;
+    color: var(--delete-button-main-color);
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+.del-all.visible {
+    display: block;
+}
+
+.del-all:hover {
+    background-color: var(--delete-button-main-color);
+    color: white;
+}
+
+@meida screen and (max-width: 900px) {
+    .form {
+        width: 100%;
+    }
+
+    .todo-list {
+        width: 100%;
+    }
+}
